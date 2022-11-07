@@ -12,7 +12,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <Container className="text-light">
+    <Container className="text-light mb-4">
       <Row className="text-center">
         <Col className="fs-1 fw-bold">
           <Link to="/" className="link-unstyled">
