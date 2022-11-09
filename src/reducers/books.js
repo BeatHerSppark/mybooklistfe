@@ -3,7 +3,7 @@ export default (bookState = [], action) => {
     case "FETCH_ALL":
       return action.payload;
     case "CREATE":
-      return bookState;
+      return [...bookState, action.payload];
 
     default:
       return bookState;

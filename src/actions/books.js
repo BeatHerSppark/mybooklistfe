@@ -9,3 +9,13 @@ export const getBooks = () => async (dispatch) => {
     console.log(error.message);
   }
 };
+
+export const createBook = (book) => async (dispatch) => {
+  try {
+    const { data } = await api.createBook(book);
+
+    dispatch({ type: "CREATE", payload: data });
+  } catch (error) {
+    console.log(error.message);
+  }
+};

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FileBase from "react-file-base64";
+import { useDispatch } from "react-redux";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -7,7 +8,11 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
+import { createBook } from "../../actions/books";
+
 const AddBookForm = () => {
+  const dispatch = useDispatch();
+
   const [bookData, setBookData] = useState({
     title: "",
     description: "",
@@ -18,7 +23,11 @@ const AddBookForm = () => {
     released: "",
   });
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(createBook(bookData));
+  };
 
   const clear = () => {};
 
@@ -86,7 +95,19 @@ const AddBookForm = () => {
           <Col>
             <Form.Group className="mb-3" controlId="released">
               <Form.Label>Release Date</Form.Label>
-              <Form.Control type="date" />
+              <Form.Control
+                type="date"
+                onChange={(e) =>
+                  setBookData({
+                    ...bookData,
+                    released: e.target.valueAsDate.toLocaleDateString("en-us", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric",
+                    }),
+                  })
+                }
+              />
             </Form.Group>
           </Col>
 
