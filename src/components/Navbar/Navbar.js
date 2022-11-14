@@ -12,52 +12,54 @@ import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <Container className="text-light mb-4">
-      <Row className="text-center" style={{ backgroundColor: "#141719" }}>
-        <Col className="fs-2 fw-bold">
-          <Link to="/" className="link-unstyled">
-            MyBookList
-          </Link>
-        </Col>
-      </Row>
-      <Row className="pb-3" style={{ backgroundColor: "#141719" }}>
-        <Col className="fs-6 fw-bold col-1 text-center my-auto">
-          <Link to="/" className="link-unstyled">
-            Books
-          </Link>
-        </Col>
-        <Col className="fs-6 fw-bold col-1 text-center my-auto">
-          <Link to="/" className="link-unstyled">
-            Authors
-          </Link>
-        </Col>
-        <Col className="fs-6 fw-bold col-1 text-center my-auto">
-          <Link to="/" className="link-unstyled">
-            Genres
-          </Link>
-        </Col>
-        <Col className="fw-bold col-6">
-          <InputGroup className="">
-            <Form.Control
-              placeholder="Search books, authors, genres..."
-              aria-label="Search"
-              aria-describedby="basic-addon2"
-              className="shadow-none"
-            />
-            <Button variant="outline-light" id="button-addon2">
-              Search
-            </Button>
-          </InputGroup>
-        </Col>
-        <Col className="fs-6 fw-bold col-1 text-center my-auto">
-          <Link to="/admin" className="link-unstyled">
-            Admin
-          </Link>
-        </Col>
-        <Col className="fs-6 fw-bold col-1 text-center my-auto">Login</Col>
-        <Col className="fs-6 fw-bold col-1 text-center my-auto">Sign up</Col>
-      </Row>
-    </Container>
+    <div className="nav-shadow nav-bg-dark">
+      <Container className="text-light mb-4">
+        <Row className="text-center">
+          <Col className="fs-2 fw-bold">
+            <Link to="/" className="link-unstyled">
+              MyBookList
+            </Link>
+          </Col>
+        </Row>
+        <Row className="pb-3">
+          <Col className="fs-6 fw-bold col-1 text-center my-auto">
+            <Link to="/" className="link-unstyled">
+              Books
+            </Link>
+          </Col>
+          <Col className="fs-6 fw-bold col-1 text-center my-auto">
+            <Link to="/" className="link-unstyled">
+              Authors
+            </Link>
+          </Col>
+          <Col className="fs-6 fw-bold col-1 text-center my-auto">
+            <Link to="/" className="link-unstyled">
+              Genres
+            </Link>
+          </Col>
+          <Col className="fw-bold col-6">
+            <InputGroup className="">
+              <Form.Control
+                placeholder="Search books, authors, genres..."
+                aria-label="Search"
+                aria-describedby="basic-addon2"
+                className="shadow-none"
+              />
+              <Button variant="outline-light" id="button-addon2">
+                Search
+              </Button>
+            </InputGroup>
+          </Col>
+          <Col className="fs-6 fw-bold col-1 text-center my-auto">
+            <Link to="/admin" className="link-unstyled">
+              Admin
+            </Link>
+          </Col>
+          <Col className="fs-6 fw-bold col-1 text-center my-auto">Login</Col>
+          <Col className="fs-6 fw-bold col-1 text-center my-auto">Sign up</Col>
+        </Row>
+      </Container>
+    </div>
   );
 };
 

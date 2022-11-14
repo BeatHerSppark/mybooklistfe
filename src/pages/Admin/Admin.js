@@ -6,7 +6,7 @@ import AllBooks from "../../components/AllBooks/AllBooks";
 
 const Admin = () => {
   return (
-    <Container className="text-light bg-dark">
+    <Container className="text-light https://makeheadway.com">
       <AddBookForm />
       <AllBooks />
     </Container>

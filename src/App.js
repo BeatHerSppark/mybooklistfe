@@ -16,7 +16,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className="bg-dark">
+    <div className="bg-darkC">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

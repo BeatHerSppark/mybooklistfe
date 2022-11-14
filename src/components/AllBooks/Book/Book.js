@@ -4,9 +4,11 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import "./Book.css";
+
 const Book = ({ book }) => {
   return (
-    <Card className="my-3 bg-dark" style={{ width: "25rem" }}>
+    <Card className="my-3 card-bg-dark" style={{ width: "25rem" }}>
       <Row className="g-0">
         <Col className="col-md-4">
           <Card.Img
