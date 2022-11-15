@@ -9,17 +9,17 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #212529;
+  background: #2a2a2a;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #14161a;
+  background: #121212;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: #191919;
 }
 
 .bg-darkC {
