@@ -10,22 +10,18 @@ const LikedGenres = () => {
   return (
     <Container className="mt-3">
       <h3>Genres You Like:</h3>
-      <Row className="g-0 row-cols-2">
+      <Row className="g-0 row-cols-1 row-cols-md-3">
         {tempArr.map((el) => (
           <Col key={el} style={{ maxWidth: "20rem" }}>
-            {" "}
-            // Make them squares
             <Card
               className="my-3"
               style={{
                 backgroundColor: "#212121",
                 border: "1px solid #2e2e2e",
+                maxWidth: "16rem",
               }}
             >
-              <Card.Img
-                style={{ maxWidth: "10rem" }}
-                src="https://tmsvalue.co.uk/wp-content/uploads/2017/03/Square-500x500-mid-grey.png"
-              />
+              <Card.Img src="https://tmsvalue.co.uk/wp-content/uploads/2017/03/Square-500x500-mid-grey.png" />
             </Card>
           </Col>
         ))}

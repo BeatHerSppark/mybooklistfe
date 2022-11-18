@@ -11,8 +11,9 @@ const Trending = () => {
     <Container>
       <h3>Trending Books:</h3>
 
-      {tempArr.map((e) => (
+      {tempArr.map((el) => (
         <Card
+          key={el}
           className="my-3 card-bg-dark"
           style={{
             backgroundColor: "#212121",

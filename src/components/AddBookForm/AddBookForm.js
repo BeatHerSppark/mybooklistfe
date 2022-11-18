@@ -27,9 +27,21 @@ const AddBookForm = () => {
     e.preventDefault();
 
     dispatch(createBook(bookData));
+
+    clear();
   };
 
-  const clear = () => {};
+  const clear = () => {
+    setBookData({
+      title: "",
+      description: "",
+      author: "",
+      genres: "",
+      bookImg: "",
+      rating: 0,
+      released: "",
+    });
+  };
 
   return (
     <Container className="mb-4">

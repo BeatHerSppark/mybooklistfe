@@ -9,9 +9,11 @@ import "./Book.css";
 const Book = ({ book }) => {
   return (
     <Card
-      className="my-3 card-bg-dark"
+      className="my-3"
       style={{
         width: "25rem",
+        backgroundColor: "#212121",
+        border: "1px solid #2e2e2e",
       }}
     >
       <Row className="g-0">
