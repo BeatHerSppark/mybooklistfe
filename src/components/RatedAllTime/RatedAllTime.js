@@ -4,11 +4,11 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 
-const Trending = () => {
-  let tempArr = [1, 2, 3];
+const RatedAllTime = () => {
+  let tempArr = [1, 2, 3, 4, 5];
   return (
     <Container>
-      <h3>Trending Books:</h3>
+      <h3>Top Rated All Time: </h3>
 
       {tempArr.map((el) => (
         <Card
@@ -46,4 +46,4 @@ const Trending = () => {
   );
 };
 
-export default Trending;
+export default RatedAllTime;

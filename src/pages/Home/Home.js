@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import CarouselItem from "../../components/Carousel/CarouselItem";
 import Trending from "../../components/Trending/Trending";
 import LikedGenres from "../../components/LikedGenres/LikedGenres";
+import RatedAllTime from "../../components/RatedAllTime/RatedAllTime";
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
 
         <Col className="col-md-4">
           <Trending />
+          <RatedAllTime />
         </Col>
       </Row>
     </Container>

@@ -19,9 +19,29 @@ const LikedGenres = () => {
                 backgroundColor: "#212121",
                 border: "1px solid #2e2e2e",
                 maxWidth: "16rem",
+                maxHeight: "16rem",
               }}
             >
-              <Card.Img src="https://tmsvalue.co.uk/wp-content/uploads/2017/03/Square-500x500-mid-grey.png" />
+              <div
+                style={{
+                  width: "16rem",
+                  height: "16rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  style={{
+                    width: "8rem",
+                    height: "8rem",
+                    marginTop: "2.5rem",
+                    marginBottom: "1rem",
+                  }}
+                  src="https://i.imgur.com/iBud6UZ.png"
+                />
+                <h4>Horror</h4>
+              </div>
             </Card>
           </Col>
         ))}
