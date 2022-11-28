@@ -4,6 +4,8 @@ export default (bookState = [], action) => {
       return action.payload;
     case "CREATE":
       return [...bookState, action.payload];
+    case "DELETE":
+      return bookState.filter((book) => book._id !== action.payload);
 
     default:
       return bookState;

@@ -4,9 +4,15 @@ import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import { useDispatch } from "react-redux";
+
+import { deleteBook } from "../../../actions/books";
+
 import "./Book.css";
 
 const Book = ({ book }) => {
+  const dispatch = useDispatch();
+
   return (
     <Card
       className="my-3"
@@ -30,7 +36,12 @@ const Book = ({ book }) => {
             <Card.Text style={{ maxHeight: "5rem" }} className="overflow-auto">
               {book.description}
             </Card.Text>
-            <Button variant="dark">See more</Button>
+            <Button
+              variant="danger"
+              onClick={() => dispatch(deleteBook(book._id))}
+            >
+              Delete
+            </Button>
           </Card.Body>
         </Col>
       </Row>

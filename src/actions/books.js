@@ -19,3 +19,13 @@ export const createBook = (book) => async (dispatch) => {
     console.log(error.message);
   }
 };
+
+export const deleteBook = (id) => async (dispatch) => {
+  try {
+    await api.deleteBook(id);
+
+    dispatch({ type: "DELETE", payload: id });
+  } catch (error) {
+    console.log(error.message);
+  }
+};
