@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import FileBase from "react-file-base64";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -8,11 +8,9 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-import { createBook } from "../../actions/books";
+import { createBook, updateBook } from "../../actions/books";
 
-const AddBookForm = () => {
-  const dispatch = useDispatch();
-
+const AddBookForm = ({ selectedId, setSelectedId }) => {
   const [bookData, setBookData] = useState({
     title: "",
     description: "",
@@ -23,15 +21,31 @@ const AddBookForm = () => {
     released: "",
   });
 
+  const dispatch = useDispatch();
+
+  const book = useSelector((store) =>
+    selectedId ? store.books.find((book) => book._id === selectedId) : null
+  );
+
+  useEffect(() => {
+    if (book) setBookData(book);
+  }, [book]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createBook(bookData));
+    if (selectedId) {
+      dispatch(updateBook(selectedId, bookData));
+    } else {
+      dispatch(createBook(bookData));
+    }
 
     clear();
   };
 
   const clear = () => {
+    setSelectedId(null);
+
     setBookData({
       title: "",
       description: "",
@@ -150,8 +164,8 @@ const AddBookForm = () => {
           />
         </Form.Group>
 
-        <Button variant="success" type="submit">
-          Add Book
+        <Button variant={selectedId ? "info" : "success"} type="submit">
+          {selectedId ? "Edit Book" : "Add Book"}
         </Button>
         <Button variant="light" onClick={clear} className="mx-3">
           Clear

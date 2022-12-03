@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 
 import Book from "./Book/Book";
 
-const AllBooks = () => {
+const AllBooks = ({ setSelectedId }) => {
   const books = useSelector((store) => store.books);
 
   console.log(books);
@@ -18,7 +18,7 @@ const AllBooks = () => {
       <Row className="row-cols-3">
         {books.map((book) => (
           <Col key={book._id} className="col-12 col-sm-6 col-md-4">
-            <Book book={book} />
+            <Book book={book} setSelectedId={setSelectedId} />
           </Col>
         ))}
       </Row>
