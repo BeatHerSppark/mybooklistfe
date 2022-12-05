@@ -79,6 +79,7 @@ const Book = ({ book, setSelectedId }) => {
       <Button
         variant="info"
         onClick={(e) => {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
           e.stopPropagation();
           setSelectedId(book._id);
         }}
