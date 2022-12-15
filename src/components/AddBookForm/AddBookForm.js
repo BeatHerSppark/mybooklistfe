@@ -51,7 +51,6 @@ const AddBookForm = ({ selectedId, setSelectedId }) => {
     setBookData({
       title: "",
       description: "",
-      author: "",
       bookImg: "",
       rating: 0,
       released: "",

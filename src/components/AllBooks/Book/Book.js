@@ -28,7 +28,7 @@ const Book = ({ book, setSelectedId }) => {
           <Row className="px-4 py-3">
             <Col className="col-md-12">
               <Card.Title>
-                {book.title}
+                {book.title} {book.genres}
                 <div style={{ opacity: "35%" }}>- {book.author}</div>
               </Card.Title>
               <Card.Subtitle style={{ opacity: "35%" }}>
