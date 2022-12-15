@@ -10,15 +10,17 @@ export const getBooks = () => async (dispatch) => {
   }
 };
 
-export const createBook = (book) => async (dispatch) => {
-  try {
-    const { data } = await api.createBook(book);
+export const createBook =
+  ({ bookData, authorName, genres }) =>
+  async (dispatch) => {
+    try {
+      const { data } = await api.createBook({ bookData, authorName, genres });
 
-    dispatch({ type: "CREATE", payload: data });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+      dispatch({ type: "CREATE", payload: data });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
 export const updateBook = (id, book) => async (dispatch) => {
   try {

@@ -14,12 +14,14 @@ const AddBookForm = ({ selectedId, setSelectedId }) => {
   const [bookData, setBookData] = useState({
     title: "",
     description: "",
-    author: "",
-    genres: "",
     bookImg: "",
     rating: 0,
     released: "",
   });
+
+  const [authorName, setAuthorName] = useState("");
+
+  const [genres, setGenres] = useState("");
 
   const dispatch = useDispatch();
 
@@ -37,7 +39,7 @@ const AddBookForm = ({ selectedId, setSelectedId }) => {
     if (selectedId) {
       dispatch(updateBook(selectedId, bookData));
     } else {
-      dispatch(createBook(bookData));
+      dispatch(createBook({ bookData, authorName, genres }));
     }
 
     clear();
@@ -50,11 +52,14 @@ const AddBookForm = ({ selectedId, setSelectedId }) => {
       title: "",
       description: "",
       author: "",
-      genres: "",
       bookImg: "",
       rating: 0,
       released: "",
     });
+
+    setAuthorName("");
+
+    setGenres("");
   };
 
   return (
@@ -81,10 +86,8 @@ const AddBookForm = ({ selectedId, setSelectedId }) => {
               <Form.Control
                 type="text"
                 placeholder="Enter book's author"
-                value={bookData.author}
-                onChange={(e) =>
-                  setBookData({ ...bookData, author: e.target.value })
-                }
+                value={authorName}
+                onChange={(e) => setAuthorName(e.target.value)}
               />
             </Form.Group>
           </Col>
@@ -110,10 +113,8 @@ const AddBookForm = ({ selectedId, setSelectedId }) => {
               <Form.Control
                 type="text"
                 placeholder="Enter book's genres"
-                value={bookData.genres}
-                onChange={(e) =>
-                  setBookData({ ...bookData, genres: e.target.value })
-                }
+                value={genres}
+                onChange={(e) => setGenres(e.target.value)}
               />
             </Form.Group>
           </Col>
